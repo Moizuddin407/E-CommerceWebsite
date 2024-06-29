@@ -1,3 +1,5 @@
+// Helper functions to be called in authController.
+
 const bcrypt = require ('bcrypt')
 
 const hashPasswordFunc = async(password) => {

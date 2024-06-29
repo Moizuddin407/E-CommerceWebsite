@@ -1,4 +1,6 @@
-const User = require('../models/user.model.js'); // Correctly import User model
+// Main LOGIC OF CODE
+
+const User = require('../models/user.model.js');
 const { hashPassword, comparePassword } = require('../helpers/authHelper.js');
 const JWT = require('jsonwebtoken')
 const registerController = async (req, res) => {
@@ -74,6 +76,18 @@ const loginController = async (req,res) => {
                 message:'User not found!'
             })
         }
+        const token =  await JWT.sign({_id:user._id},process.env.JWT_SECRET,{expiresIn:'7d'});
+        
+        res.status(200).send({
+            success:true,
+            message:'login succesfully',
+            user:{
+                name:user.name,
+                email:user.email,
+                phone:user.phone,
+                token
+            }
+        })
 
     }catch(e){
         console.log(e);
@@ -86,4 +100,8 @@ const loginController = async (req,res) => {
     }
 }
 
-module.exports = { registerController , loginController};
+const testController = (req,res) =>{
+    res.send('protected route');
+}
+
+module.exports = { registerController , loginController, testController};
