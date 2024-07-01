@@ -1,5 +1,6 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink,Link } from 'react-router-dom'
+import { FaShoppingBag } from "react-icons/fa";
 
 const Header = () => {
   return (
@@ -20,16 +21,27 @@ const Header = () => {
           </button>
 
           <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
-            <NavLink to="/" className="navbar-brand">
-              Hidden brand
-            </NavLink>
+            {/* https://react-icons.github.io/react-icons/search/#q=shoppin */}
+            {/* Install icons from here. */}
+            
+            <FaShoppingBag />
+            <Link to="/" className="navbar-brand">
+              Ecommerce App
+            </Link>
 
             <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <NavLink to="/" className="nav-link active" aria-current="page">
+                <NavLink to="/" className="nav-link">
                   Home
                 </NavLink>
               </li>
+
+              <li className="nav-item">
+                <NavLink to="/category" className="nav-link">
+                  Category
+                </NavLink>
+              </li>
+
               <li className="nav-item">
                 <NavLink to="/register" className="nav-link">
                   Register

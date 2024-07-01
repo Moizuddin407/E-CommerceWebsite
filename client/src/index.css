@@ -36,3 +36,7 @@ font-family: 'Poppins';
 .nav-link{
   font-weight: 300 !important;
 }
+
+.active{
+  border-bottom: 1px solid black;
+}
