@@ -24,8 +24,10 @@ const Header = () => {
             {/* https://react-icons.github.io/react-icons/search/#q=shoppin */}
             {/* Install icons from here. */}
             
-            <FaShoppingBag />
-            <Link to="/" className="navbar-brand">
+
+
+            <Link to="/" className="navbar-brand">  
+              <FaShoppingBag />
               Ecommerce App
             </Link>
 
