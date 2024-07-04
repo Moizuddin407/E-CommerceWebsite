@@ -1,22 +1,33 @@
-import React from 'react'
-import Header from './Header.js'
-import Footer from './Footer.js'
+import React from 'react';
+import Header from './Header.js';
+import Footer from './Footer.js';
+import { Helmet } from 'react-helmet';
 
-// Working of props:
-// Whenever data from parent file i.e. App.js in this case,
-// Changes data, As it is in <Layout> </Layout> tag, it will
-// Dynamically update value.
-
-const Layout = (props) => {
+const Layout = ({ children, title, description, keywords, author }) => {
   return (
     <div>
-        <Header/>
-          <main style={{minHeight:'70vh'}}>
-            {props.children}
-          </main>
-        <Footer/>
-    </div>
-  )
-}
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>{title}</title>
+        <meta name="description" content={description} />
+        <meta name="keywords" content={keywords} />
+        <meta name="author" content={author} />
+      </Helmet>
 
-export default Layout
+      <Header />
+      <main style={{ minHeight: '70vh' }}>
+        {children}
+      </main>
+      <Footer />
+    </div>
+  );
+};
+
+Layout.defaultProps = {
+  title: "Ecommerce app",
+  description: "MERN PROJ",
+  keywords: "",
+  author: "Zactech"
+};
+
+export default Layout;

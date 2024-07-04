@@ -1,15 +1,20 @@
-import React from 'react'
-import Layout from '../components/layout/Layout'
+import React from 'react';
+import Layout from '../components/layout/Layout';
 
 const About = () => {
   return (
-    <Layout>
-      <div className="row contactus ">
-        <div className="col-md-6 ">
+    <Layout
+      title="About Us - E-Commerce Website"
+      description="Learn more about our e-commerce website, our values, mission, and team."
+      keywords="about us, e-commerce, company information"
+      author="Your Company Name"
+    >
+      <div className="row contactus">
+        <div className="col-md-6">
           <img
             src="/images/about.jpeg"
-            alt="contactus"
-            style={{ width: "100%" }}
+            alt="about us"
+            style={{ width: '100%' }}
           />
         </div>
         <div className="col-md-4">
